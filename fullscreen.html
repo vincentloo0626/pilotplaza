@@ -118,6 +118,29 @@
         // 应用对应的滤镜
         if (imageType) {
             fullscreenImg.className = `fullscreen-image filter-${imageType}`;
+            
+            // 设置不同类型的DiceBear头像
+            if (imageType === 'cat') {
+                fullscreenImg.src = 'https://api.dicebear.com/7.x/avataaars/svg?seed=cat';
+            } else if (imageType === 'dog') {
+                fullscreenImg.src = 'https://api.dicebear.com/7.x/bottts/svg?seed=dog';
+            } else if (imageType === 'rabbit') {
+                fullscreenImg.src = 'https://api.dicebear.com/7.x/lorelei/svg?seed=rabbit';
+            } else if (imageType === 'hamster') {
+                fullscreenImg.src = 'https://api.dicebear.com/7.x/micah/svg?seed=hamster';
+            } else if (imageType === 'bird') {
+                fullscreenImg.src = 'https://api.dicebear.com/7.x/thumbs/svg?seed=bird';
+            } else if (imageType === 'fox') {
+                fullscreenImg.src = 'https://api.dicebear.com/7.x/personas/svg?seed=fox';
+            } else if (imageType === 'panda') {
+                fullscreenImg.src = 'https://api.dicebear.com/7.x/fun-emoji/svg?seed=panda';
+            } else if (imageType === 'squirrel') {
+                fullscreenImg.src = 'https://api.dicebear.com/7.x/adventurer/svg?seed=squirrel';
+            } else if (imageType === 'hedgehog') {
+                fullscreenImg.src = 'https://api.dicebear.com/7.x/pixel-art/svg?seed=hedgehog';
+            } else if (imageType === 'koala') {
+                fullscreenImg.src = 'https://api.dicebear.com/7.x/identicon/svg?seed=koala';
+            }
         }
     </script>
 </body>
