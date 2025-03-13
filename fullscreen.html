@@ -58,8 +58,34 @@
 </head>
 <body>
     <div class="fullscreen-container">
-        <img src="images/image1.png" alt="全屏显示" class="fullscreen-image">
+        <img src="images/image1.png" alt="全屏显示" class="fullscreen-image" id="fullscreen-img">
         <button class="back-button" onclick="window.history.back()">返回 Back</button>
     </div>
+
+    <script>
+        // 定义不同的图片源
+        const imageSources = {
+            'default': 'images/image1.png',
+            'cat': 'https://source.unsplash.com/featured/?cat',
+            'dog': 'https://source.unsplash.com/featured/?dog',
+            'rabbit': 'https://source.unsplash.com/featured/?rabbit',
+            'hamster': 'https://source.unsplash.com/featured/?hamster',
+            'bird': 'https://source.unsplash.com/featured/?bird',
+            'fox': 'https://source.unsplash.com/featured/?fox',
+            'panda': 'https://source.unsplash.com/featured/?panda',
+            'squirrel': 'https://source.unsplash.com/featured/?squirrel',
+            'hedgehog': 'https://source.unsplash.com/featured/?hedgehog',
+            'koala': 'https://source.unsplash.com/featured/?koala'
+        };
+
+        // 从URL获取图片类型参数
+        const urlParams = new URLSearchParams(window.location.search);
+        const imageType = urlParams.get('type');
+        
+        // 设置图片源
+        if (imageType && imageSources[imageType]) {
+            document.getElementById('fullscreen-img').src = imageSources[imageType];
+        }
+    </script>
 </body>
 </html> 
