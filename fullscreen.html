@@ -54,37 +54,70 @@
         .back-button:hover {
             background: rgba(0, 0, 0, 0.8);
         }
+
+        /* 图片滤镜效果 */
+        .filter-default {
+            filter: hue-rotate(0deg) saturate(1.2) brightness(1.05);
+        }
+        
+        .filter-cat {
+            filter: hue-rotate(30deg) saturate(1.5) brightness(1.2);
+        }
+        
+        .filter-dog {
+            filter: hue-rotate(60deg) saturate(1.6) brightness(1.2);
+        }
+        
+        .filter-rabbit {
+            filter: hue-rotate(90deg) saturate(1.5) brightness(1.1);
+        }
+        
+        .filter-hamster {
+            filter: hue-rotate(120deg) saturate(1.6) brightness(1.2);
+        }
+        
+        .filter-bird {
+            filter: hue-rotate(150deg) saturate(1.5) brightness(1.1);
+        }
+        
+        .filter-fox {
+            filter: hue-rotate(180deg) saturate(1.6) brightness(1.2);
+        }
+        
+        .filter-panda {
+            filter: hue-rotate(210deg) saturate(1.5) brightness(1.1);
+        }
+        
+        .filter-squirrel {
+            filter: hue-rotate(240deg) saturate(1.6) brightness(1.2);
+        }
+        
+        .filter-hedgehog {
+            filter: hue-rotate(270deg) saturate(1.5) brightness(1.1);
+        }
+        
+        .filter-koala {
+            filter: hue-rotate(300deg) saturate(1.6) brightness(1.2);
+        }
     </style>
 </head>
 <body>
     <div class="fullscreen-container">
-        <img src="images/image1.png" alt="全屏显示" class="fullscreen-image" id="fullscreen-img">
+        <img src="images/image1.png" alt="全屏显示" class="fullscreen-image filter-default" id="fullscreen-img">
         <button class="back-button" onclick="window.history.back()">返回 Back</button>
     </div>
 
     <script>
-        // 定义不同的图片源
-        const imageSources = {
-            'default': 'images/image1.png',
-            'cat': 'https://i.imgur.com/EbXijWP.jpg',
-            'dog': 'https://i.imgur.com/Yq5qxiG.jpg',
-            'rabbit': 'https://i.imgur.com/hTmBJE1.jpg',
-            'hamster': 'https://i.imgur.com/4gfMdWm.jpg',
-            'bird': 'https://i.imgur.com/n9SoTjb.jpg',
-            'fox': 'https://i.imgur.com/uVIGLfM.jpg',
-            'panda': 'https://i.imgur.com/HgKnMzM.jpg',
-            'squirrel': 'https://i.imgur.com/pXzJM3b.jpg',
-            'hedgehog': 'https://i.imgur.com/YnUTJFj.jpg',
-            'koala': 'https://i.imgur.com/54WKXQL.jpg'
-        };
-
-        // 从URL获取图片类型参数
+        // 获取URL参数
         const urlParams = new URLSearchParams(window.location.search);
         const imageType = urlParams.get('type');
         
-        // 设置图片源
-        if (imageType && imageSources[imageType]) {
-            document.getElementById('fullscreen-img').src = imageSources[imageType];
+        // 获取图片元素
+        const fullscreenImg = document.getElementById('fullscreen-img');
+        
+        // 应用对应的滤镜
+        if (imageType) {
+            fullscreenImg.className = `fullscreen-image filter-${imageType}`;
         }
     </script>
 </body>
